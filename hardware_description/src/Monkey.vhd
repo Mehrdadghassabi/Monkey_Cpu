@@ -6,7 +6,17 @@ entity Monkey is
 Port (
     clk: in  std_logic;
     rst: in std_logic;
-    pc: in std_logic_vector(15 downto 0)
+    pc: in std_logic_vector(15 downto 0);
+	 res: out std_logic_vector(15 downto 0);
+	 dati: out std_logic_vector(31 downto 0);
+	 write_en: out std_logic;
+	 write_dest: out std_logic_vector(1 downto 0);
+	 write_data: out std_logic_vector(15 downto 0);
+	 read_addr_1: out std_logic_vector(1 downto 0);
+	 read_addr_2: out std_logic_vector(1 downto 0);
+	 read_data_1: out std_logic_vector(15 downto 0);
+	 read_data_2: out std_logic_vector(15 downto 0);
+	 opo: out std_logic_vector(1 downto 0)
     );
 end Monkey;
 
@@ -74,6 +84,16 @@ a2 : Alu port map(reg_read_data_1,reg_read_data_2,op,result);
 
 a3 : Register_Bank port map(clk,rst,reg_write_en,reg_write_dest,reg_write_data,reg_read_addr_1,reg_read_data_1,reg_read_addr_2,reg_read_data_2);
 
+res <= result ;
+dati <= datins;
+write_en <= reg_write_en;
+write_dest <= reg_write_dest;
+write_data <= reg_write_data;
+read_addr_1 <= reg_read_addr_1;
+read_addr_2 <= reg_read_addr_2;
+read_data_1 <= reg_read_data_1;
+read_data_2 <= reg_read_data_1;
+opo <= op ;
 
 end Behavioral;
 
