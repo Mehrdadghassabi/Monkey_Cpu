@@ -28,4 +28,3 @@ begin
 	reg_read_addr_2 <= datins(6) & datins(7);
 
 end Behavioral;
-
