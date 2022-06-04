@@ -40,7 +40,7 @@ We provide the sample code in the `mul.bin` file that tells the cpu to calculate
 ```
 255*1 + 5*1 + 100*1 + 0*200 + 0*46 + 0*200 + 100*-1 + -1*180 + -1*300 = -220
 ```
-and load lines of this file to the [ROM array](./hardware_description/src/Memory.vhd#17).
+and load lines of this file to the [ROM array](./hardware_description/src/Memory.vhd#L17).
 
 ### Result in ISE simulation
 In the [TestBench](./hardware_description/testbench/monkey_tb.vhd) every `40ns` we send a clock and increase the Program Counter once.
