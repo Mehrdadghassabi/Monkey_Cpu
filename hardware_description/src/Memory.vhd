@@ -3,15 +3,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.numeric_std.all;
 
-entity Rom is
+entity Memory is
 port (
  pc: in std_logic_vector(15 downto 0);
  result   : in  STD_LOGIC_VECTOR(15 downto 0);
  datins: out  std_logic_vector(31 downto 0)
 );
-end Rom;
+end Memory;
 
-architecture Behavioral of Rom is
+architecture Behavioral of Memory is
  type ROM_type is array (0 to 63 ) of std_logic_vector(31 downto 0);
  type RAM_type is array (0 to 15 ) of std_logic_vector(15 downto 0);
  constant rom_ins: ROM_type:=(

@@ -3,13 +3,13 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 use ieee.NUMERIC_STD.all;
  
-ENTITY rom_tb IS
-END rom_tb;
+ENTITY mem_tb IS
+END mem_tb;
  
-ARCHITECTURE behavior OF rom_tb IS 
+ARCHITECTURE behavior OF mem_tb IS 
  
  
-    COMPONENT Rom
+    COMPONENT Memory
     PORT(
          pc : IN  std_logic_vector(15 downto 0);
 			result   : in  STD_LOGIC_VECTOR(15 downto 0);
@@ -25,7 +25,7 @@ ARCHITECTURE behavior OF rom_tb IS
  
 BEGIN
  
-   uut: Rom PORT MAP (
+   uut: Memory PORT MAP (
           pc => pc,
 			 result => result,
           datins => datins

@@ -21,7 +21,7 @@ Port (
 end Monkey;
 
 architecture Behavioral of Monkey is
-component Rom
+component Memory
 port (
  pc: in std_logic_vector(15 downto 0);
  result   : in  STD_LOGIC_VECTOR(15 downto 0);
@@ -76,7 +76,7 @@ signal op : STD_LOGIC_VECTOR(1 downto 0);
 
 begin
 
-a0 : Rom port map(pc,result,datins);
+a0 : Memory port map(pc,result,datins);
 
 a1 : ControlUnit port map(datins,reg_write_en,reg_write_dest,reg_write_data,reg_read_addr_1,reg_read_addr_2,op);
 
